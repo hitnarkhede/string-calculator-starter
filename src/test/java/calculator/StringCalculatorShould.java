@@ -39,35 +39,5 @@ class StringCalculatorShould {
     	assertEquals(6, StringCalculator.add("1,2,3"));
     }
 
-    @Test
-    public void testNewLine(){
-    	assertEquals(6, StringCalculator.add("1\n2,3"));
-    }
 
-    @Test
-    public void testNegativeNumber(){
-    	try {
-			StringCalculator.add("-1,2");
-		}
-		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "Negatives not allowed: -1");
-		}
-
-		try {
-			StringCalculator.add("2,-4,3,-5");
-		}
-		catch (IllegalArgumentException e){
-			assertEquals(e.getMessage(), "Negatives not allowed: -4,-5");
-		}
-    }
-
-    @Test
-    public void testOverThousand(){
-    	assertEquals(2, StringCalculator.add("1000,2"));
-    }
-
-    @Test
-    public void testOtherDelimiter(){
-    	assertEquals(3, StringCalculator.add("//;\n1;2"));
-    }
 }
